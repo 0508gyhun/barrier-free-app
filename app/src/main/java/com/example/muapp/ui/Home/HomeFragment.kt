@@ -47,12 +47,6 @@ class HomeFragment : Fragment(),OnMapReadyCallback {
     private var _binding : FragmentHomeBinding? = null
     private val binding get() =  _binding!!
 
-//    private val repository : RestaurantRepository by lazy {
-//        RestaurantRepository(
-//            RestaurantService.create(),
-//            db.restaurantFavoriteDao()
-//        )
-//    }
 
     private lateinit var naverMap: NaverMap
     private lateinit var locationSource: FusedLocationSource
@@ -131,7 +125,7 @@ class HomeFragment : Fragment(),OnMapReadyCallback {
                 tvRestaurantAccessExitLabel.setValue(info.exit)
                 tvRestaurantAccessAccessInfoLabel.setValue(info.accessInfo)
                 tvRestaurantAccessRouteLabel.setValue(info.route)
-                //tvRestaurantAccessElevatorLabel.setValue(info.elevator)
+                tvRestaurantAccessElevatorLabel.setValue(info.elevator)
                 tvRestaurantAccessParkingLabel.setValue(info.parking)
             }
         }
@@ -164,6 +158,12 @@ class HomeFragment : Fragment(),OnMapReadyCallback {
 
     private fun setBottomSheet() {
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bottmSheet.constBottomSheet)
+        bottomSheetBehavior.apply {
+            state = BottomSheetBehavior.STATE_HIDDEN
+            skipCollapsed = true  // 중간 높이 상태를 건너뜁니다
+            peekHeight = 0  // 초기 peek height를 0으로 설정
+        }
+
 
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
@@ -231,6 +231,7 @@ class HomeFragment : Fragment(),OnMapReadyCallback {
 //        addRestaurantAccessInfo(item.contentId)
 
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+        bottomSheetBehavior.skipCollapsed = true
     }
 
 

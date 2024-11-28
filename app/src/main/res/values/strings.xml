@@ -12,4 +12,5 @@
     <string name="description_access_route_label">오시는 길</string>
     <string name="description_favorite_btn">즐겨찾기 버튼</string>
     <string name="description_favorite">favorite</string>
+    <string name="App_name">BarrierFree Restaurant</string>
 </resources>

@@ -33,9 +33,11 @@
             </intent-filter>
 
 
+
         </activity>
         <activity android:name=".ui.Login.LoginActivity"
             android:exported="true">
+
 
 
 

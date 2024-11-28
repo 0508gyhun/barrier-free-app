@@ -11,20 +11,7 @@
     android:layout_gravity="bottom"
     app:behavior_fitToContents="true"
 
-
     >
-
-<!--    app:behavior_expandedOffset="40dp"-->
-<!--    android:paddingBottom="1dp"-->
-
-<!--    app:behavior_peekHeight="0dp"-->
-<!---->
-<!--   -->
-<!---->
-<!---->
-<!--    -->
-<!--    >-->
-
 
     <View
         android:id="@+id/view_bottom_sheet_bar"
@@ -39,7 +26,7 @@
 
     <TextView
         android:id="@+id/tv_app_name"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +35,7 @@
         android:gravity="center"
         android:layout_marginTop="10dp"
 
-        android:text="Android app name"
+        android:text="@string/App_name"
         android:textSize="15sp"
         />
 
@@ -86,7 +73,7 @@
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.85"
-        app:layout_constraintStart_toEndOf="@id/ev_restaurant2"
+        app:layout_constraintStart_toEndOf="@id/ev_restaurant1"
         app:layout_constraintTop_toBottomOf="@id/tv_app_name"
         tools:src="@drawable/ic_search" />
 
